@@ -12,14 +12,6 @@ import (
 	"strings"
 )
 
-var DefaultsvnPath = os.Getenv("APPDATA") + "\\Subversion\\auth\\svn.simple"
-
-type TsvnPassItem struct {
-	UserName string
-	Repo     string
-	Pass     string
-}
-
 func SvnMissingPass(svnPath string) (missingpass []TsvnPassItem) {
 	if len(svnPath) == 0 {
 		svnPath = DefaultsvnPath
